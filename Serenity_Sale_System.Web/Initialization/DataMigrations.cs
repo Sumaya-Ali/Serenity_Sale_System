@@ -23,6 +23,7 @@ namespace Serenity_Sale_System
             //<if:Northwind>
             , "Northwind"
             //</if:Northwind>
+            , "SaleSystem"
         };
 
         protected ISqlConnections SqlConnections { get; }
@@ -205,13 +206,15 @@ namespace Serenity_Sale_System
 
             // safety check to ensure that we are not modifying an arbitrary database.
             // remove these lines if you want Serenity_Sale_System migrations to run on your DB.
+            /*
             if (!isOracle && cs.ConnectionString.IndexOf(typeof(DataMigrations).Namespace +
                     @"_" + databaseKey + "_v1", StringComparison.OrdinalIgnoreCase) < 0)
             {
                 SkippedMigrations = true;
                 return;
             }
-
+            */
+            
             string databaseType = isOracle ? "OracleManaged" : serverType;
 
             var conventionSet = new DefaultConventionSet(defaultSchemaName: null,
