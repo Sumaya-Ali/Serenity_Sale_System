@@ -1,5 +1,6 @@
 # Serenity_Sale_System
-A Simple Sale System ( Customer, Product and Order) project using Serenity Framework (.Net, TypeScript) <br />
+A Simple Sale System ( Customer, Product, Order & Order details) project using Serenity Framework (.Net, TypeScript) <br />
+Modify the DB string connection in appsettings.json file to fit your DB server , here we are using "Fluent Migrator" to generate DB tables, you can check this out in Migrations\SaleSystm directory <br />
 Build the project by executing the commands ( <br />
 cd Serenity_Sale_System.web  <br />
 dotnet run  <br />
