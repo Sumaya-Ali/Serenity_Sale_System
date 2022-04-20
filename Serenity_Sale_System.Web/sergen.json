@@ -1,4 +1,4 @@
-﻿{
+{
   "RootNamespace": "Serenity_Sale_System",
   "ServerTypings": {
     "LocalTexts": true
@@ -8,6 +8,37 @@
       "/wwwroot/Scripts/serenity/Serenity.CoreLib*.*"
     ]
   },
+  "Connections": [
+    {
+      "Key": "SaleSystem",
+      "Tables": [
+        {
+          "Tablename": "dbo.TblCustomer",
+          "Identifier": "TblCustomer",
+          "Module": "SaleSystem",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.TblOrder",
+          "Identifier": "TblOrder",
+          "Module": "SaleSystem",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.TblOrderDetails",
+          "Identifier": "TblOrderDetails",
+          "Module": "SaleSystem",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.TblProduct",
+          "Identifier": "TblProduct",
+          "Module": "SaleSystem",
+          "PermissionKey": "Administration:General"
+        }
+      ]
+    }
+  ],
   "UpgradeInfo": {
     "InitialType": "Community",
     "InitialVersion": "5.2.4.0"

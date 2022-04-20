@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Interviews\\Serenity_Sale_System\\Serenity_Sale_System.Web\\Serenity_Sale_System.Web.csproj": {}
+    "D:\\Interviews\\Serenity_Sale_System\\Serenity_Sale_System.web\\Serenity_Sale_System.Web.csproj": {}
   },
   "projects": {
-    "D:\\Interviews\\Serenity_Sale_System\\Serenity_Sale_System.Web\\Serenity_Sale_System.Web.csproj": {
+    "D:\\Interviews\\Serenity_Sale_System\\Serenity_Sale_System.web\\Serenity_Sale_System.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Interviews\\Serenity_Sale_System\\Serenity_Sale_System.Web\\Serenity_Sale_System.Web.csproj",
+        "projectUniqueName": "D:\\Interviews\\Serenity_Sale_System\\Serenity_Sale_System.web\\Serenity_Sale_System.Web.csproj",
         "projectName": "Serenity_Sale_System.Web",
-        "projectPath": "D:\\Interviews\\Serenity_Sale_System\\Serenity_Sale_System.Web\\Serenity_Sale_System.Web.csproj",
+        "projectPath": "D:\\Interviews\\Serenity_Sale_System\\Serenity_Sale_System.web\\Serenity_Sale_System.Web.csproj",
         "packagesPath": "C:\\Users\\Toshiba\\.nuget\\packages\\",
-        "outputPath": "D:\\Interviews\\Serenity_Sale_System\\Serenity_Sale_System.Web\\obj\\",
+        "outputPath": "D:\\Interviews\\Serenity_Sale_System\\Serenity_Sale_System.web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Toshiba\\AppData\\Roaming\\NuGet\\NuGet.Config"

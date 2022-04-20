@@ -68,6 +68,30 @@ namespace MVC
                     public const string AccountSignUp = "~/Modules/Membership/Account/SignUp/AccountSignUp.cshtml";
                 }
             }
+
+        }
+
+        public static class SaleSystem
+        {
+            public static class TblCustomer
+            {
+                public const string TblCustomerIndex = "~/Modules/SaleSystem/TblCustomer/TblCustomerIndex.cshtml";
+            }
+
+            public static class TblOrder
+            {
+                public const string TblOrderIndex = "~/Modules/SaleSystem/TblOrder/TblOrderIndex.cshtml";
+            }
+
+            public static class TblOrderDetails
+            {
+                public const string TblOrderDetailsIndex = "~/Modules/SaleSystem/TblOrderDetails/TblOrderDetailsIndex.cshtml";
+            }
+
+            public static class TblProduct
+            {
+                public const string TblProductIndex = "~/Modules/SaleSystem/TblProduct/TblProductIndex.cshtml";
+            }
         }
 
         public static class Shared

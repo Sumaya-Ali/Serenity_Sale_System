@@ -493,6 +493,289 @@ declare namespace Serenity_Sale_System.Membership {
         Password?: string;
     }
 }
+declare namespace Serenity_Sale_System.SaleSystem {
+    class TblCustomerColumns {
+        static columnsKey: string;
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    interface TblCustomerForm {
+        CompanyName: Serenity.StringEditor;
+        ContactName: Serenity.StringEditor;
+        ContactTitle: Serenity.StringEditor;
+        Address: Serenity.StringEditor;
+        Country: Serenity.IntegerEditor;
+        Phone: Serenity.StringEditor;
+        Fax: Serenity.StringEditor;
+        Email: Serenity.StringEditor;
+    }
+    class TblCustomerForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    interface TblCustomerRow {
+        CustomerId?: number;
+        CompanyName?: string;
+        ContactName?: string;
+        ContactTitle?: string;
+        Address?: string;
+        Country?: number;
+        Phone?: string;
+        Fax?: string;
+        Email?: string;
+    }
+    namespace TblCustomerRow {
+        const idProperty = "CustomerId";
+        const nameProperty = "CompanyName";
+        const localTextPrefix = "SaleSystem.TblCustomer";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            CustomerId = "CustomerId",
+            CompanyName = "CompanyName",
+            ContactName = "ContactName",
+            ContactTitle = "ContactTitle",
+            Address = "Address",
+            Country = "Country",
+            Phone = "Phone",
+            Fax = "Fax",
+            Email = "Email"
+        }
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    namespace TblCustomerService {
+        const baseUrl = "SaleSystem/TblCustomer";
+        function Create(request: Serenity.SaveRequest<TblCustomerRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<TblCustomerRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TblCustomerRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TblCustomerRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "SaleSystem/TblCustomer/Create",
+            Update = "SaleSystem/TblCustomer/Update",
+            Delete = "SaleSystem/TblCustomer/Delete",
+            Retrieve = "SaleSystem/TblCustomer/Retrieve",
+            List = "SaleSystem/TblCustomer/List"
+        }
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    class TblOrderColumns {
+        static columnsKey: string;
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    class TblOrderDetailsColumns {
+        static columnsKey: string;
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    interface TblOrderDetailsForm {
+        OrderId: Serenity.IntegerEditor;
+        ProductId: Serenity.IntegerEditor;
+        Quantity: Serenity.IntegerEditor;
+        UnitPrice: Serenity.IntegerEditor;
+        Discount: Serenity.IntegerEditor;
+        TotalPrice: Serenity.IntegerEditor;
+    }
+    class TblOrderDetailsForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    interface TblOrderDetailsRow {
+        OrderDetailId?: number;
+        OrderId?: number;
+        ProductId?: number;
+        Quantity?: number;
+        UnitPrice?: number;
+        Discount?: number;
+        TotalPrice?: number;
+        OrderCustomerId?: number;
+        OrderOrderDate?: string;
+        ProductProductName?: string;
+        ProductProductImage?: string;
+        ProductCategory?: number;
+        ProductDescription?: string;
+        ProductPrice?: string;
+    }
+    namespace TblOrderDetailsRow {
+        const idProperty = "OrderDetailId";
+        const localTextPrefix = "SaleSystem.TblOrderDetails";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            OrderDetailId = "OrderDetailId",
+            OrderId = "OrderId",
+            ProductId = "ProductId",
+            Quantity = "Quantity",
+            UnitPrice = "UnitPrice",
+            Discount = "Discount",
+            TotalPrice = "TotalPrice",
+            OrderCustomerId = "OrderCustomerId",
+            OrderOrderDate = "OrderOrderDate",
+            ProductProductName = "ProductProductName",
+            ProductProductImage = "ProductProductImage",
+            ProductCategory = "ProductCategory",
+            ProductDescription = "ProductDescription",
+            ProductPrice = "ProductPrice"
+        }
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    namespace TblOrderDetailsService {
+        const baseUrl = "SaleSystem/TblOrderDetails";
+        function Create(request: Serenity.SaveRequest<TblOrderDetailsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<TblOrderDetailsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TblOrderDetailsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TblOrderDetailsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "SaleSystem/TblOrderDetails/Create",
+            Update = "SaleSystem/TblOrderDetails/Update",
+            Delete = "SaleSystem/TblOrderDetails/Delete",
+            Retrieve = "SaleSystem/TblOrderDetails/Retrieve",
+            List = "SaleSystem/TblOrderDetails/List"
+        }
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    interface TblOrderForm {
+        CustomerId: Serenity.IntegerEditor;
+        OrderDate: Serenity.DateEditor;
+    }
+    class TblOrderForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    interface TblOrderRow {
+        OrderId?: number;
+        CustomerId?: number;
+        OrderDate?: string;
+        CustomerCompanyName?: string;
+        CustomerContactName?: string;
+        CustomerContactTitle?: string;
+        CustomerAddress?: string;
+        CustomerCountry?: number;
+        CustomerPhone?: string;
+        CustomerFax?: string;
+        CustomerEmail?: string;
+    }
+    namespace TblOrderRow {
+        const idProperty = "OrderId";
+        const localTextPrefix = "SaleSystem.TblOrder";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            OrderId = "OrderId",
+            CustomerId = "CustomerId",
+            OrderDate = "OrderDate",
+            CustomerCompanyName = "CustomerCompanyName",
+            CustomerContactName = "CustomerContactName",
+            CustomerContactTitle = "CustomerContactTitle",
+            CustomerAddress = "CustomerAddress",
+            CustomerCountry = "CustomerCountry",
+            CustomerPhone = "CustomerPhone",
+            CustomerFax = "CustomerFax",
+            CustomerEmail = "CustomerEmail"
+        }
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    namespace TblOrderService {
+        const baseUrl = "SaleSystem/TblOrder";
+        function Create(request: Serenity.SaveRequest<TblOrderRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<TblOrderRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TblOrderRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TblOrderRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "SaleSystem/TblOrder/Create",
+            Update = "SaleSystem/TblOrder/Update",
+            Delete = "SaleSystem/TblOrder/Delete",
+            Retrieve = "SaleSystem/TblOrder/Retrieve",
+            List = "SaleSystem/TblOrder/List"
+        }
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    class TblProductColumns {
+        static columnsKey: string;
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    interface TblProductForm {
+        ProductName: Serenity.StringEditor;
+        ProductImage: Serenity.StringEditor;
+        Category: Serenity.IntegerEditor;
+        Description: Serenity.StringEditor;
+        Price: Serenity.StringEditor;
+    }
+    class TblProductForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    interface TblProductRow {
+        ProductId?: number;
+        ProductName?: string;
+        ProductImage?: string;
+        Category?: number;
+        Description?: string;
+        Price?: string;
+    }
+    namespace TblProductRow {
+        const idProperty = "ProductId";
+        const nameProperty = "ProductName";
+        const localTextPrefix = "SaleSystem.TblProduct";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            ProductId = "ProductId",
+            ProductName = "ProductName",
+            ProductImage = "ProductImage",
+            Category = "Category",
+            Description = "Description",
+            Price = "Price"
+        }
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    namespace TblProductService {
+        const baseUrl = "SaleSystem/TblProduct";
+        function Create(request: Serenity.SaveRequest<TblProductRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<TblProductRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TblProductRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TblProductRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "SaleSystem/TblProduct/Create",
+            Update = "SaleSystem/TblProduct/Update",
+            Delete = "SaleSystem/TblProduct/Delete",
+            Retrieve = "SaleSystem/TblProduct/Retrieve",
+            List = "SaleSystem/TblProduct/List"
+        }
+    }
+}
 declare namespace Serenity_Sale_System {
     interface ScriptUserDefinition {
         Username?: string;
@@ -733,6 +1016,100 @@ declare namespace Serenity_Sale_System.Membership {
     class SignUpPanel extends Serenity.PropertyPanel<SignUpRequest, any> {
         protected getFormKey(): string;
         private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    class TblCustomerDialog extends Serenity.EntityDialog<TblCustomerRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: TblCustomerForm;
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    class TblCustomerGrid extends Serenity.EntityGrid<TblCustomerRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof TblCustomerDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    class TblOrderDialog extends Serenity.EntityDialog<TblOrderRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: TblOrderForm;
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    class TblOrderGrid extends Serenity.EntityGrid<TblOrderRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof TblOrderDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    class TblOrderDetailsDialog extends Serenity.EntityDialog<TblOrderDetailsRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: TblOrderDetailsForm;
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    class TblOrderDetailsGrid extends Serenity.EntityGrid<TblOrderDetailsRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof TblOrderDetailsDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    class TblProductDialog extends Serenity.EntityDialog<TblProductRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: TblProductForm;
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    class TblProductGrid extends Serenity.EntityGrid<TblProductRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof TblProductDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
         constructor(container: JQuery);
     }
 }
