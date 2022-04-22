@@ -7,3 +7,4 @@ dotnet run  <br />
 ) to generate node-modules.. <br />
 then fetch http://localhost:5000 <br />
 use admin as a username & serenity as a password to login <br />
+We Support Persisting Settings to Database (User Preferences Table) <br />
