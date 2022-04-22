@@ -9,7 +9,7 @@ using System.IO;
 namespace Serenity_Sale_System.SaleSystem
 {
     [ConnectionKey("SaleSystem"), Module("SaleSystem"), TableName("[dbo].[TblOrder]")]
-    [DisplayName("Tbl Order"), InstanceName("Tbl Order")]
+    [DisplayName("Orders"), InstanceName("Order")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
     public sealed class TblOrderRow : Row<TblOrderRow.RowFields>, IIdRow

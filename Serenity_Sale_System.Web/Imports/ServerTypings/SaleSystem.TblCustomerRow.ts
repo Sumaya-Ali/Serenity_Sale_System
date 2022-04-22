@@ -5,7 +5,7 @@
         ContactName?: string;
         ContactTitle?: string;
         Address?: string;
-        Country?: number;
+        Country?: CustomerCountry;
         Phone?: string;
         Fax?: string;
         Email?: string;

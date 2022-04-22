@@ -2,7 +2,7 @@
     export interface TblProductForm {
         ProductName: Serenity.StringEditor;
         ProductImage: Serenity.StringEditor;
-        Category: Serenity.IntegerEditor;
+        Category: Serenity.EnumEditor;
         Description: Serenity.StringEditor;
         Price: Serenity.StringEditor;
     }
@@ -19,7 +19,7 @@
 
                 var s = Serenity;
                 var w0 = s.StringEditor;
-                var w1 = s.IntegerEditor;
+                var w1 = s.EnumEditor;
 
                 Q.initFormType(TblProductForm, [
                     'ProductName', w0,

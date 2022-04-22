@@ -494,6 +494,21 @@ declare namespace Serenity_Sale_System.Membership {
     }
 }
 declare namespace Serenity_Sale_System.SaleSystem {
+    enum CustomerCountry {
+        Syria = 1,
+        Iraq = 2,
+        Gordan = 3
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    enum ProductCategory {
+        Labtop = 1,
+        Mobile = 2,
+        Screen = 3,
+        Other = 4
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
     class TblCustomerColumns {
         static columnsKey: string;
     }
@@ -504,7 +519,7 @@ declare namespace Serenity_Sale_System.SaleSystem {
         ContactName: Serenity.StringEditor;
         ContactTitle: Serenity.StringEditor;
         Address: Serenity.StringEditor;
-        Country: Serenity.IntegerEditor;
+        Country: Serenity.EnumEditor;
         Phone: Serenity.StringEditor;
         Fax: Serenity.StringEditor;
         Email: Serenity.StringEditor;
@@ -522,7 +537,7 @@ declare namespace Serenity_Sale_System.SaleSystem {
         ContactName?: string;
         ContactTitle?: string;
         Address?: string;
-        Country?: number;
+        Country?: CustomerCountry;
         Phone?: string;
         Fax?: string;
         Email?: string;
@@ -722,7 +737,7 @@ declare namespace Serenity_Sale_System.SaleSystem {
     interface TblProductForm {
         ProductName: Serenity.StringEditor;
         ProductImage: Serenity.StringEditor;
-        Category: Serenity.IntegerEditor;
+        Category: Serenity.EnumEditor;
         Description: Serenity.StringEditor;
         Price: Serenity.StringEditor;
     }
@@ -737,7 +752,7 @@ declare namespace Serenity_Sale_System.SaleSystem {
         ProductId?: number;
         ProductName?: string;
         ProductImage?: string;
-        Category?: number;
+        Category?: ProductCategory;
         Description?: string;
         Price?: string;
     }

@@ -9,7 +9,7 @@ using System.IO;
 namespace Serenity_Sale_System.SaleSystem
 {
     [ConnectionKey("SaleSystem"), Module("SaleSystem"), TableName("[dbo].[TblProduct]")]
-    [DisplayName("Tbl Product"), InstanceName("Tbl Product")]
+    [DisplayName("Products"), InstanceName("Product")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
     public sealed class TblProductRow : Row<TblProductRow.RowFields>, IIdRow, INameRow
@@ -21,25 +21,25 @@ namespace Serenity_Sale_System.SaleSystem
             set => fields.ProductId[this] = value;
         }
 
-        [DisplayName("Product Name"), Size(100), NotNull, QuickSearch, NameProperty]
+        [DisplayName("Product name"), Size(100), NotNull, QuickSearch, NameProperty]
         public string ProductName
         {
             get => fields.ProductName[this];
             set => fields.ProductName[this] = value;
         }
 
-        [DisplayName("Product Image"), Size(300)]
+        [DisplayName("Product image"), Size(300)]
         public string ProductImage
         {
             get => fields.ProductImage[this];
             set => fields.ProductImage[this] = value;
         }
 
-        [DisplayName("Category")]
-        public short? Category
+        [DisplayName("Category"),NotNull,DefaultValue(ProductCategory.Other)]
+        public ProductCategory? Category
         {
-            get => fields.Category[this];
-            set => fields.Category[this] = value;
+            get => (ProductCategory?)fields.Category[this];
+            set => fields.Category[this] = (short?)value;
         }
 
         [DisplayName("Description"), Size(300)]

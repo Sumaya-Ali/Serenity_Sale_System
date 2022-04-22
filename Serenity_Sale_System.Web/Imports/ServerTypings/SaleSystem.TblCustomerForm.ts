@@ -4,7 +4,7 @@
         ContactName: Serenity.StringEditor;
         ContactTitle: Serenity.StringEditor;
         Address: Serenity.StringEditor;
-        Country: Serenity.IntegerEditor;
+        Country: Serenity.EnumEditor;
         Phone: Serenity.StringEditor;
         Fax: Serenity.StringEditor;
         Email: Serenity.StringEditor;
@@ -22,7 +22,7 @@
 
                 var s = Serenity;
                 var w0 = s.StringEditor;
-                var w1 = s.IntegerEditor;
+                var w1 = s.EnumEditor;
 
                 Q.initFormType(TblCustomerForm, [
                     'CompanyName', w0,

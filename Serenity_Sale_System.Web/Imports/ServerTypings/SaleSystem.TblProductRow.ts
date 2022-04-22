@@ -3,7 +3,7 @@
         ProductId?: number;
         ProductName?: string;
         ProductImage?: string;
-        Category?: number;
+        Category?: ProductCategory;
         Description?: string;
         Price?: string;
     }

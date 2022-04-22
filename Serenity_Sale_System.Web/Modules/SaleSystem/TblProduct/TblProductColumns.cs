@@ -12,7 +12,7 @@ namespace Serenity_Sale_System.SaleSystem.Columns
     [BasedOnRow(typeof(TblProductRow), CheckNames = true)]
     public class TblProductColumns
     {
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
+        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight,Ignore]
         public int ProductId { get; set; }
         [EditLink]
         public string ProductName { get; set; }

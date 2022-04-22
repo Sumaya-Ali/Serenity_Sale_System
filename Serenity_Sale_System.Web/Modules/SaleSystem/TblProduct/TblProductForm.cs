@@ -12,10 +12,15 @@ namespace Serenity_Sale_System.SaleSystem.Forms
     [BasedOnRow(typeof(TblProductRow), CheckNames = true)]
     public class TblProductForm
     {
+        [Placeholder("product name")]
         public string ProductName { get; set; }
+        [Hint("upload product image")]
         public string ProductImage { get; set; }
-        public short Category { get; set; }
+        [Hint("chose product category")]
+        public ProductCategory Category { get; set; }
+        [Placeholder("product description")]
         public string Description { get; set; }
+        [Placeholder("product price per unit")]
         public string Price { get; set; }
     }
 }

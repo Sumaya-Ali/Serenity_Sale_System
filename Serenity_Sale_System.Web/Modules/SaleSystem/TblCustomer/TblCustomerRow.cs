@@ -9,7 +9,7 @@ using System.IO;
 namespace Serenity_Sale_System.SaleSystem
 {
     [ConnectionKey("SaleSystem"), Module("SaleSystem"), TableName("[dbo].[TblCustomer]")]
-    [DisplayName("Tbl Customer"), InstanceName("Tbl Customer")]
+    [DisplayName("Customers"), InstanceName("Customer")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
     public sealed class TblCustomerRow : Row<TblCustomerRow.RowFields>, IIdRow, INameRow
@@ -21,21 +21,21 @@ namespace Serenity_Sale_System.SaleSystem
             set => fields.CustomerId[this] = value;
         }
 
-        [DisplayName("Company Name"), Size(100), QuickSearch, NameProperty]
+        [DisplayName("Company name"), Size(100), QuickSearch, NameProperty]
         public string CompanyName
         {
             get => fields.CompanyName[this];
             set => fields.CompanyName[this] = value;
         }
 
-        [DisplayName("Contact Name"), Size(100), NotNull]
+        [DisplayName("Contact name"), Size(100), NotNull]
         public string ContactName
         {
             get => fields.ContactName[this];
             set => fields.ContactName[this] = value;
         }
 
-        [DisplayName("Contact Title"), Size(100)]
+        [DisplayName("Contact title"), Size(100)]
         public string ContactTitle
         {
             get => fields.ContactTitle[this];
@@ -49,11 +49,11 @@ namespace Serenity_Sale_System.SaleSystem
             set => fields.Address[this] = value;
         }
 
-        [DisplayName("Country"), NotNull]
-        public short? Country
+        [DisplayName("Country"), NotNull,DefaultValue(CustomerCountry.Syria)]
+        public CustomerCountry? Country
         {
-            get => fields.Country[this];
-            set => fields.Country[this] = value;
+            get =>  (CustomerCountry?)fields.Country[this];
+            set => fields.Country[this] = (short?)value;
         }
 
         [DisplayName("Phone"), Size(15)]
