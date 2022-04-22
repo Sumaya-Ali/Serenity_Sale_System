@@ -518,11 +518,11 @@ declare namespace Serenity_Sale_System.SaleSystem {
         CompanyName: Serenity.StringEditor;
         ContactName: Serenity.StringEditor;
         ContactTitle: Serenity.StringEditor;
-        Address: Serenity.StringEditor;
+        Address: Serenity.TextAreaEditor;
         Country: Serenity.EnumEditor;
-        Phone: Serenity.StringEditor;
-        Fax: Serenity.StringEditor;
-        Email: Serenity.StringEditor;
+        Phone: Serenity.IntegerEditor;
+        Fax: Serenity.IntegerEditor;
+        Email: Serenity.EmailEditor;
     }
     class TblCustomerForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -736,9 +736,9 @@ declare namespace Serenity_Sale_System.SaleSystem {
 declare namespace Serenity_Sale_System.SaleSystem {
     interface TblProductForm {
         ProductName: Serenity.StringEditor;
-        ProductImage: Serenity.StringEditor;
+        ProductImage: Serenity.ImageUploadEditor;
         Category: Serenity.EnumEditor;
-        Description: Serenity.StringEditor;
+        Description: Serenity.TextAreaEditor;
         Price: Serenity.StringEditor;
     }
     class TblProductForm extends Serenity.PrefixedContext {

@@ -28,7 +28,7 @@ namespace Serenity_Sale_System.SaleSystem
             set => fields.OrderId[this] = value;
         }
 
-        [DisplayName("Product"), NotNull, ForeignKey("[dbo].[TblProduct]", "ProductId"), LeftJoin("jProduct"), TextualField("ProductProductName")]
+        [DisplayName("Product"), NotNull, ForeignKey("[dbo].[TblProduct]", "ProductId"), LeftJoin("jProduct"), TextualField("ProductName")]
         public int? ProductId
         {
             get => fields.ProductId[this];

@@ -19,14 +19,18 @@ namespace Serenity_Sale_System.SaleSystem.Forms
         [Placeholder("contact title")]
         public string ContactTitle { get; set; }
         [Placeholder("customer address")]
+        [TextAreaEditor(Rows = 3)]
         public string Address { get; set; }
         [Hint("chose customer country")]
         public CustomerCountry Country { get; set; }
         [Placeholder("customer phone")]
+        [IntegerEditor]
         public string Phone { get; set; }
         [Placeholder("customer fax")]
+        [IntegerEditor]
         public string Fax { get; set; }
         [Placeholder("customer email")]
+        [EmailEditor]
         public string Email { get; set; }
     }
 }
