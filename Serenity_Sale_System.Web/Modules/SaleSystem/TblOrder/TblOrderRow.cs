@@ -14,7 +14,7 @@ namespace Serenity_Sale_System.SaleSystem
     [ModifyPermission("Administration:General")]
     public sealed class TblOrderRow : Row<TblOrderRow.RowFields>, IIdRow
     {
-        [DisplayName("Order Id"), Identity, IdProperty]
+        [DisplayName("Order Id"), Identity, IdProperty,QuickSearch(SearchType.StartsWith)]
         public int? OrderId
         {
             get => fields.OrderId[this];
@@ -28,28 +28,28 @@ namespace Serenity_Sale_System.SaleSystem
             set => fields.CustomerId[this] = value;
         }
 
-        [DisplayName("Order Date"), NotNull]
+        [DisplayName("Order date"), NotNull]
         public DateTime? OrderDate
         {
             get => fields.OrderDate[this];
             set => fields.OrderDate[this] = value;
         }
 
-        [DisplayName("Customer Company Name"), Expression("jCustomer.[CompanyName]")]
+        [DisplayName("Company name"), Expression("jCustomer.[CompanyName]"),QuickSearch]
         public string CustomerCompanyName
         {
             get => fields.CustomerCompanyName[this];
             set => fields.CustomerCompanyName[this] = value;
         }
 
-        [DisplayName("Customer Contact Name"), Expression("jCustomer.[ContactName]")]
+        [DisplayName("Contact name"), Expression("jCustomer.[ContactName]"),QuickSearch]
         public string CustomerContactName
         {
             get => fields.CustomerContactName[this];
             set => fields.CustomerContactName[this] = value;
         }
 
-        [DisplayName("Customer Contact Title"), Expression("jCustomer.[ContactTitle]")]
+        [DisplayName("Contact title"), Expression("jCustomer.[ContactTitle]"),QuickSearch]
         public string CustomerContactTitle
         {
             get => fields.CustomerContactTitle[this];
@@ -63,11 +63,11 @@ namespace Serenity_Sale_System.SaleSystem
             set => fields.CustomerAddress[this] = value;
         }
 
-        [DisplayName("Customer Country"), Expression("jCustomer.[Country]")]
-        public short? CustomerCountry
+        [DisplayName("Country"), Expression("jCustomer.[Country]")]
+        public CustomerCountry? CustomerCountry
         {
-            get => fields.CustomerCountry[this];
-            set => fields.CustomerCountry[this] = value;
+            get => (CustomerCountry?)fields.CustomerCountry[this];
+            set => fields.CustomerCountry[this] = (short?)value;
         }
 
         [DisplayName("Customer Phone"), Expression("jCustomer.[Phone]")]

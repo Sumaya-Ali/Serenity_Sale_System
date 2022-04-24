@@ -42,14 +42,14 @@ namespace Serenity_Sale_System.SaleSystem
             set => fields.Category[this] = (short?)value;
         }
 
-        [DisplayName("Description"), Size(300)]
+        [DisplayName("Description"), Size(300),QuickSearch]
         public string Description
         {
             get => fields.Description[this];
             set => fields.Description[this] = value;
         }
 
-        [DisplayName("Price"), Size(50)]
+        [DisplayName("Price"), Size(50),QuickSearch(SearchType.StartsWith) ]
         public string Price
         {
             get => fields.Price[this];

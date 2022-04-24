@@ -28,21 +28,21 @@ namespace Serenity_Sale_System.SaleSystem
             set => fields.CompanyName[this] = value;
         }
 
-        [DisplayName("Contact name"), Size(100), NotNull]
+        [DisplayName("Contact name"), Size(100), NotNull,QuickSearch]
         public string ContactName
         {
             get => fields.ContactName[this];
             set => fields.ContactName[this] = value;
         }
 
-        [DisplayName("Contact title"), Size(100)]
+        [DisplayName("Contact title"), Size(100),QuickSearch]
         public string ContactTitle
         {
             get => fields.ContactTitle[this];
             set => fields.ContactTitle[this] = value;
         }
 
-        [DisplayName("Address"), Size(150)]
+        [DisplayName("Address"), Size(150),QuickSearch]
         public string Address
         {
             get => fields.Address[this];
@@ -56,21 +56,21 @@ namespace Serenity_Sale_System.SaleSystem
             set => fields.Country[this] = (short?)value;
         }
 
-        [DisplayName("Phone"), Size(15)]
+        [DisplayName("Phone"), Size(15),QuickSearch(SearchType.StartsWith)]
         public string Phone
         {
             get => fields.Phone[this];
             set => fields.Phone[this] = value;
         }
 
-        [DisplayName("Fax"), Size(15)]
+        [DisplayName("Fax"), Size(15),QuickSearch(SearchType.StartsWith)]
         public string Fax
         {
             get => fields.Fax[this];
             set => fields.Fax[this] = value;
         }
 
-        [DisplayName("Email"), Size(50)]
+        [DisplayName("Email"), Size(50),QuickSearch(SearchType.StartsWith)]
         public string Email
         {
             get => fields.Email[this];

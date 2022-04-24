@@ -7,7 +7,7 @@
         CustomerContactName?: string;
         CustomerContactTitle?: string;
         CustomerAddress?: string;
-        CustomerCountry?: number;
+        CustomerCountry?: CustomerCountry;
         CustomerPhone?: string;
         CustomerFax?: string;
         CustomerEmail?: string;

@@ -684,7 +684,7 @@ declare namespace Serenity_Sale_System.SaleSystem {
         CustomerContactName?: string;
         CustomerContactTitle?: string;
         CustomerAddress?: string;
-        CustomerCountry?: number;
+        CustomerCountry?: CustomerCountry;
         CustomerPhone?: string;
         CustomerFax?: string;
         CustomerEmail?: string;
@@ -1056,6 +1056,7 @@ declare namespace Serenity_Sale_System.SaleSystem {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getQuickSearchFields(): Serenity.QuickSearchField[];
     }
 }
 declare namespace Serenity_Sale_System.SaleSystem {
@@ -1079,6 +1080,7 @@ declare namespace Serenity_Sale_System.SaleSystem {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getQuickSearchFields(): Serenity.QuickSearchField[];
     }
 }
 declare namespace Serenity_Sale_System.SaleSystem {
@@ -1126,5 +1128,6 @@ declare namespace Serenity_Sale_System.SaleSystem {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getQuickSearchFields(): Serenity.QuickSearchField[];
     }
 }
