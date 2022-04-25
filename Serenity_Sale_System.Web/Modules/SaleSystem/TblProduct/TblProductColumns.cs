@@ -16,7 +16,8 @@ namespace Serenity_Sale_System.SaleSystem.Columns
         public int ProductId { get; set; }
         [EditLink]
         public string ProductName { get; set; }
-        public string ProductImage { get; set; }
+        //public string ProductImage { get; set; }
+        [QuickFilter]
         public short Category { get; set; }
         public string Description { get; set; }
         public string Price { get; set; }

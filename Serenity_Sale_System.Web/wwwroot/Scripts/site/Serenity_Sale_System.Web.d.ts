@@ -541,11 +541,14 @@ declare namespace Serenity_Sale_System.SaleSystem {
         Phone?: string;
         Fax?: string;
         Email?: string;
+        CustomerFullname?: string;
     }
     namespace TblCustomerRow {
         const idProperty = "CustomerId";
-        const nameProperty = "CompanyName";
+        const nameProperty = "CustomerFullname";
         const localTextPrefix = "SaleSystem.TblCustomer";
+        const lookupKey = "SaleSystemDB.TblCustomer";
+        function getLookup(): Q.Lookup<TblCustomerRow>;
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";
         const readPermission = "Administration:General";
@@ -559,7 +562,8 @@ declare namespace Serenity_Sale_System.SaleSystem {
             Country = "Country",
             Phone = "Phone",
             Fax = "Fax",
-            Email = "Email"
+            Email = "Email",
+            CustomerFullname = "CustomerFullname"
         }
     }
 }
@@ -666,7 +670,7 @@ declare namespace Serenity_Sale_System.SaleSystem {
 }
 declare namespace Serenity_Sale_System.SaleSystem {
     interface TblOrderForm {
-        CustomerId: Serenity.IntegerEditor;
+        CustomerId: Serenity.LookupEditor;
         OrderDate: Serenity.DateEditor;
     }
     class TblOrderForm extends Serenity.PrefixedContext {
@@ -691,6 +695,7 @@ declare namespace Serenity_Sale_System.SaleSystem {
     }
     namespace TblOrderRow {
         const idProperty = "OrderId";
+        const nameProperty = "OrderId";
         const localTextPrefix = "SaleSystem.TblOrder";
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";

@@ -14,9 +14,11 @@ namespace Serenity_Sale_System.SaleSystem.Columns
     {
         [EditLink,  AlignRight]
         public int OrderId { get; set; }
-        public String CustomerCompanyName { get; set; }
-        public  String CustomerContactName {get; set; }
+        [QuickFilter]
+        public String CustomerCompanyName { get; set; }       
+        public  String CustomerContactName {get; set; }        
         public String CustomerContactTitle {get; set;}
+        [QuickFilter]
         public short CustomerCountry {get; set;}
         public DateTime OrderDate { get; set; }
     }

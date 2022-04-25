@@ -15,6 +15,7 @@
 
     export namespace TblOrderRow {
         export const idProperty = 'OrderId';
+        export const nameProperty = 'OrderId';
         export const localTextPrefix = 'SaleSystem.TblOrder';
         export const deletePermission = 'Administration:General';
         export const insertPermission = 'Administration:General';

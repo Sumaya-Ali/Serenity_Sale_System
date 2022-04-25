@@ -1,6 +1,6 @@
 ﻿namespace Serenity_Sale_System.SaleSystem {
     export interface TblOrderForm {
-        CustomerId: Serenity.IntegerEditor;
+        CustomerId: Serenity.LookupEditor;
         OrderDate: Serenity.DateEditor;
     }
 
@@ -15,7 +15,7 @@
                 TblOrderForm.init = true;
 
                 var s = Serenity;
-                var w0 = s.IntegerEditor;
+                var w0 = s.LookupEditor;
                 var w1 = s.DateEditor;
 
                 Q.initFormType(TblOrderForm, [

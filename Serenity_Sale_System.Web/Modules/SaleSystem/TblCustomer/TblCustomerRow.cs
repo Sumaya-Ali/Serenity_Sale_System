@@ -12,6 +12,7 @@ namespace Serenity_Sale_System.SaleSystem
     [DisplayName("Customers"), InstanceName("Customer")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
+    [LookupScript("SaleSystemDB.TblCustomer")]
     public sealed class TblCustomerRow : Row<TblCustomerRow.RowFields>, IIdRow, INameRow
     {
         [DisplayName("Customer Id"), Identity, IdProperty]
@@ -20,8 +21,15 @@ namespace Serenity_Sale_System.SaleSystem
             get => fields.CustomerId[this];
             set => fields.CustomerId[this] = value;
         }
-
-        [DisplayName("Company name"), Size(100), QuickSearch, NameProperty]
+        [DisplayName("Customer"), NameProperty,
+            Expression("(t0.CompanyName + '-' + t0.ContactName + '-' + t0.ContactTitle)")]
+        [LookupEditor(typeof(TblCustomerRow))]
+        public String CustomerFullname
+        {
+            get => fields.CustomerFullname[this];
+            set => fields.CustomerFullname[this] = value;
+        }
+        [DisplayName("Company name"), Size(100), QuickSearch]
         public string CompanyName
         {
             get => fields.CompanyName[this];
@@ -98,6 +106,7 @@ namespace Serenity_Sale_System.SaleSystem
             public StringField Phone;
             public StringField Fax;
             public StringField Email;
+            public StringField CustomerFullname;
         }
     }
 }

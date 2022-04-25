@@ -9,12 +9,18 @@
         Phone?: string;
         Fax?: string;
         Email?: string;
+        CustomerFullname?: string;
     }
 
     export namespace TblCustomerRow {
         export const idProperty = 'CustomerId';
-        export const nameProperty = 'CompanyName';
+        export const nameProperty = 'CustomerFullname';
         export const localTextPrefix = 'SaleSystem.TblCustomer';
+        export const lookupKey = 'SaleSystemDB.TblCustomer';
+
+        export function getLookup(): Q.Lookup<TblCustomerRow> {
+            return Q.getLookup<TblCustomerRow>('SaleSystemDB.TblCustomer');
+        }
         export const deletePermission = 'Administration:General';
         export const insertPermission = 'Administration:General';
         export const readPermission = 'Administration:General';
@@ -29,7 +35,8 @@
             Country = "Country",
             Phone = "Phone",
             Fax = "Fax",
-            Email = "Email"
+            Email = "Email",
+            CustomerFullname = "CustomerFullname"
         }
     }
 }

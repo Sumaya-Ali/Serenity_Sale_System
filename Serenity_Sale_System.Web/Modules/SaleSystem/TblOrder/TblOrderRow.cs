@@ -14,14 +14,15 @@ namespace Serenity_Sale_System.SaleSystem
     [ModifyPermission("Administration:General")]
     public sealed class TblOrderRow : Row<TblOrderRow.RowFields>, IIdRow
     {
-        [DisplayName("Order Id"), Identity, IdProperty,QuickSearch(SearchType.StartsWith)]
+        [DisplayName("Order Id"), Identity, IdProperty,QuickSearch(SearchType.StartsWith), NameProperty]
         public int? OrderId
         {
             get => fields.OrderId[this];
             set => fields.OrderId[this] = value;
         }
 
-        [DisplayName("Customer"), NotNull, ForeignKey("[dbo].[TblCustomer]", "CustomerId"), LeftJoin("jCustomer"), TextualField("CompanyName")]
+        [DisplayName("Customer"), NotNull, ForeignKey("[dbo].[TblCustomer]", "CustomerId"), LeftJoin("jCustomer")]
+        [LookupEditor(typeof(TblCustomerRow), InplaceAdd = true,DialogType ="Serenity_Sale_System.SaleSystem.TblCustomerDialog")]
         public int? CustomerId
         {
             get => fields.CustomerId[this];
@@ -34,8 +35,8 @@ namespace Serenity_Sale_System.SaleSystem
             get => fields.OrderDate[this];
             set => fields.OrderDate[this] = value;
         }
-
-        [DisplayName("Company name"), Expression("jCustomer.[CompanyName]"),QuickSearch]
+        
+        [DisplayName("Company name"), Expression("jCustomer.[CompanyName]"),QuickSearch,EditLink]
         public string CustomerCompanyName
         {
             get => fields.CustomerCompanyName[this];
@@ -115,6 +116,7 @@ namespace Serenity_Sale_System.SaleSystem
             public StringField CustomerPhone;
             public StringField CustomerFax;
             public StringField CustomerEmail;
+
         }
     }
 }
