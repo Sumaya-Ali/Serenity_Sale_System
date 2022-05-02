@@ -14,7 +14,7 @@ namespace Serenity_Sale_System.SaleSystem.Columns
     {
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight,Ignore]
         public int OrderDetailId { get; set; }
-        public int OrderId { get; set; }
+       // public int OrderId { get; set; }
         public String ProductProductName { get; set; }
         public short Quantity { get; set; }
         public short UnitPrice { get; set; }

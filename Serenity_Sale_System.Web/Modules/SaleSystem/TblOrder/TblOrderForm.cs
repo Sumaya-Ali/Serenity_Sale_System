@@ -14,5 +14,7 @@ namespace Serenity_Sale_System.SaleSystem.Forms
     {
         public int CustomerId { get; set; }
         public DateTime OrderDate { get; set; }
+        [TblOrderDetailsEditor, IgnoreName,DisplayName("Details")]
+        public List<TblOrderDetailsRow> OrderDetailsList { get; set; }
     }
 }

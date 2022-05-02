@@ -5,6 +5,7 @@
 /// <reference types="jqueryui" />
 /// <reference types="serenity.pro.ui" />
 /// <reference types="serenity.pro.extensions" />
+/// <reference types="serenity.extensions" />
 declare namespace Serenity_Sale_System.Administration {
     class LanguageColumns {
         static columnsKey: string;
@@ -596,8 +597,7 @@ declare namespace Serenity_Sale_System.SaleSystem {
 }
 declare namespace Serenity_Sale_System.SaleSystem {
     interface TblOrderDetailsForm {
-        OrderId: Serenity.IntegerEditor;
-        ProductId: Serenity.IntegerEditor;
+        ProductId: Serenity.LookupEditor;
         Quantity: Serenity.IntegerEditor;
         UnitPrice: Serenity.IntegerEditor;
         Discount: Serenity.IntegerEditor;
@@ -628,6 +628,7 @@ declare namespace Serenity_Sale_System.SaleSystem {
     }
     namespace TblOrderDetailsRow {
         const idProperty = "OrderDetailId";
+        const nameProperty = "OrderDetailId";
         const localTextPrefix = "SaleSystem.TblOrderDetails";
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";
@@ -672,6 +673,7 @@ declare namespace Serenity_Sale_System.SaleSystem {
     interface TblOrderForm {
         CustomerId: Serenity.LookupEditor;
         OrderDate: Serenity.DateEditor;
+        OrderDetailsList: TblOrderDetailsEditor;
     }
     class TblOrderForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -692,6 +694,7 @@ declare namespace Serenity_Sale_System.SaleSystem {
         CustomerPhone?: string;
         CustomerFax?: string;
         CustomerEmail?: string;
+        OrderDetailsList?: TblOrderDetailsRow[];
     }
     namespace TblOrderRow {
         const idProperty = "OrderId";
@@ -712,7 +715,8 @@ declare namespace Serenity_Sale_System.SaleSystem {
             CustomerCountry = "CustomerCountry",
             CustomerPhone = "CustomerPhone",
             CustomerFax = "CustomerFax",
-            CustomerEmail = "CustomerEmail"
+            CustomerEmail = "CustomerEmail",
+            OrderDetailsList = "OrderDetailsList"
         }
     }
 }
@@ -740,7 +744,7 @@ declare namespace Serenity_Sale_System.SaleSystem {
 }
 declare namespace Serenity_Sale_System.SaleSystem {
     interface TblProductForm {
-        ProductName: Serenity.StringEditor;
+        ProductName: Serenity.LookupEditor;
         ProductImage: Serenity.ImageUploadEditor;
         Category: Serenity.EnumEditor;
         Description: Serenity.TextAreaEditor;
@@ -765,6 +769,8 @@ declare namespace Serenity_Sale_System.SaleSystem {
         const idProperty = "ProductId";
         const nameProperty = "ProductName";
         const localTextPrefix = "SaleSystem.TblProduct";
+        const lookupKey = "SaleSystemDB.TblProduct";
+        function getLookup(): Q.Lookup<TblProductRow>;
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";
         const readPermission = "Administration:General";
@@ -1098,6 +1104,25 @@ declare namespace Serenity_Sale_System.SaleSystem {
         protected getInsertPermission(): string;
         protected getUpdatePermission(): string;
         protected form: TblOrderDetailsForm;
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    class TblOrderDetailsEditDialog extends Serenity.Extensions.GridEditorDialog<TblOrderDetailsRow> {
+        protected getFormKey(): string;
+        protected getNameProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected form: TblOrderDetailsForm;
+        constructor();
+    }
+}
+declare namespace Serenity_Sale_System.SaleSystem {
+    class TblOrderDetailsEditor extends Serenity.Extensions.GridEditorBase<TblOrderDetailsRow> {
+        protected getColumnsKey(): string;
+        protected getLocalTextPrefix(): string;
+        protected getDialogType(): typeof TblOrderDetailsEditDialog;
+        constructor(container: JQuery);
+        protected getAddButtonCaption(): string;
+        protected validateEntity(row: TblOrderDetailsRow, id: number): boolean;
     }
 }
 declare namespace Serenity_Sale_System.SaleSystem {

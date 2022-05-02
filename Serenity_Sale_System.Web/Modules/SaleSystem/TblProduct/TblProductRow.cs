@@ -12,6 +12,7 @@ namespace Serenity_Sale_System.SaleSystem
     [DisplayName("Products"), InstanceName("Product")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
+    [LookupScript("SaleSystemDB.TblProduct")]
     public sealed class TblProductRow : Row<TblProductRow.RowFields>, IIdRow, INameRow
     {
         [DisplayName("Product Id"), Identity, IdProperty]
@@ -22,6 +23,7 @@ namespace Serenity_Sale_System.SaleSystem
         }
 
         [DisplayName("Product name"), Size(100), NotNull, QuickSearch, NameProperty]
+        [LookupEditor(typeof(TblProductRow))]
         public string ProductName
         {
             get => fields.ProductName[this];

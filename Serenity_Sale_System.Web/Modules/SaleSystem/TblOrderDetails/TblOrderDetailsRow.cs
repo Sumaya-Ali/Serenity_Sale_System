@@ -14,7 +14,7 @@ namespace Serenity_Sale_System.SaleSystem
     [ModifyPermission("Administration:General")]
     public sealed class TblOrderDetailsRow : Row<TblOrderDetailsRow.RowFields>, IIdRow
     {
-        [DisplayName("Order Detail Id"), Identity, IdProperty]
+        [DisplayName("Order Detail Id"), Identity, IdProperty,NameProperty]
         public int? OrderDetailId
         {
             get => fields.OrderDetailId[this];
@@ -29,6 +29,7 @@ namespace Serenity_Sale_System.SaleSystem
         }
 
         [DisplayName("Product"), NotNull, ForeignKey("[dbo].[TblProduct]", "ProductId"), LeftJoin("jProduct"), TextualField("ProductName")]
+        [LookupEditor(typeof(TblProductRow))]
         public int? ProductId
         {
             get => fields.ProductId[this];
@@ -77,14 +78,14 @@ namespace Serenity_Sale_System.SaleSystem
             set => fields.OrderOrderDate[this] = value;
         }
 
-        [DisplayName("Product Product Name"), Expression("jProduct.[ProductName]")]
+        [DisplayName("Product Name"), Expression("jProduct.[ProductName]"),EditLink]
         public string ProductProductName
         {
             get => fields.ProductProductName[this];
             set => fields.ProductProductName[this] = value;
         }
 
-        [DisplayName("Product Product Image"), Expression("jProduct.[ProductImage]")]
+        [DisplayName("Product Image"), Expression("jProduct.[ProductImage]")]
         public string ProductProductImage
         {
             get => fields.ProductProductImage[this];

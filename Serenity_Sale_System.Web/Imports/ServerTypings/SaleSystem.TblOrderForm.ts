@@ -2,6 +2,7 @@
     export interface TblOrderForm {
         CustomerId: Serenity.LookupEditor;
         OrderDate: Serenity.DateEditor;
+        OrderDetailsList: TblOrderDetailsEditor;
     }
 
     export class TblOrderForm extends Serenity.PrefixedContext {
@@ -17,10 +18,12 @@
                 var s = Serenity;
                 var w0 = s.LookupEditor;
                 var w1 = s.DateEditor;
+                var w2 = TblOrderDetailsEditor;
 
                 Q.initFormType(TblOrderForm, [
                     'CustomerId', w0,
-                    'OrderDate', w1
+                    'OrderDate', w1,
+                    'OrderDetailsList', w2
                 ]);
             }
         }

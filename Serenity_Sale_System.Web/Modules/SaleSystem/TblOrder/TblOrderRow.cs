@@ -5,6 +5,7 @@ using Serenity.Data.Mapping;
 using System;
 using System.ComponentModel;
 using System.IO;
+using System.Collections.Generic;
 
 namespace Serenity_Sale_System.SaleSystem
 {
@@ -91,6 +92,13 @@ namespace Serenity_Sale_System.SaleSystem
             get => fields.CustomerEmail[this];
             set => fields.CustomerEmail[this] = value;
         }
+        [MasterDetailRelation(foreignKey: "OrderId", IncludeColumns = "ProductId,Quantity,UnitPrice,Discount,TotalPrice,ProductProductName")]
+        [DisplayName("Details"), NotMapped]
+        public List<TblOrderDetailsRow> OrderDetailsList
+        {
+            get => fields.OrderDetailsList[this];
+            set => fields.OrderDetailsList[this] = value;
+        }
 
         public TblOrderRow()
             : base()
@@ -116,7 +124,7 @@ namespace Serenity_Sale_System.SaleSystem
             public StringField CustomerPhone;
             public StringField CustomerFax;
             public StringField CustomerEmail;
-
+            public RowListField<TblOrderDetailsRow> OrderDetailsList;
         }
     }
 }

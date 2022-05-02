@@ -11,6 +11,7 @@
         CustomerPhone?: string;
         CustomerFax?: string;
         CustomerEmail?: string;
+        OrderDetailsList?: TblOrderDetailsRow[];
     }
 
     export namespace TblOrderRow {
@@ -33,7 +34,8 @@
             CustomerCountry = "CustomerCountry",
             CustomerPhone = "CustomerPhone",
             CustomerFax = "CustomerFax",
-            CustomerEmail = "CustomerEmail"
+            CustomerEmail = "CustomerEmail",
+            OrderDetailsList = "OrderDetailsList"
         }
     }
 }

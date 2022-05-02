@@ -1,7 +1,6 @@
 ﻿namespace Serenity_Sale_System.SaleSystem {
     export interface TblOrderDetailsForm {
-        OrderId: Serenity.IntegerEditor;
-        ProductId: Serenity.IntegerEditor;
+        ProductId: Serenity.LookupEditor;
         Quantity: Serenity.IntegerEditor;
         UnitPrice: Serenity.IntegerEditor;
         Discount: Serenity.IntegerEditor;
@@ -19,15 +18,15 @@
                 TblOrderDetailsForm.init = true;
 
                 var s = Serenity;
-                var w0 = s.IntegerEditor;
+                var w0 = s.LookupEditor;
+                var w1 = s.IntegerEditor;
 
                 Q.initFormType(TblOrderDetailsForm, [
-                    'OrderId', w0,
                     'ProductId', w0,
-                    'Quantity', w0,
-                    'UnitPrice', w0,
-                    'Discount', w0,
-                    'TotalPrice', w0
+                    'Quantity', w1,
+                    'UnitPrice', w1,
+                    'Discount', w1,
+                    'TotalPrice', w1
                 ]);
             }
         }

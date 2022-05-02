@@ -12,6 +12,11 @@
         export const idProperty = 'ProductId';
         export const nameProperty = 'ProductName';
         export const localTextPrefix = 'SaleSystem.TblProduct';
+        export const lookupKey = 'SaleSystemDB.TblProduct';
+
+        export function getLookup(): Q.Lookup<TblProductRow> {
+            return Q.getLookup<TblProductRow>('SaleSystemDB.TblProduct');
+        }
         export const deletePermission = 'Administration:General';
         export const insertPermission = 'Administration:General';
         export const readPermission = 'Administration:General';
