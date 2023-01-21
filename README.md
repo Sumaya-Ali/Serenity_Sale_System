@@ -8,3 +8,14 @@ dotnet run  <br />
 then fetch http://localhost:5000 <br />
 use admin as a username & serenity as a password to login <br />
 We Support Persisting Settings to Database (User Preferences Table) <br />
+
+
+![1](https://user-images.githubusercontent.com/52631071/213866274-20c81c20-e00f-4eed-add3-4ca5c60029e8.PNG)
+
+
+![2](https://user-images.githubusercontent.com/52631071/213866277-bca6666f-961b-4a34-acee-29cdac9e2450.PNG)
+
+
+![3](https://user-images.githubusercontent.com/52631071/213866281-0024c291-a57a-432b-a8f5-087f30818bb8.PNG)
+
+
